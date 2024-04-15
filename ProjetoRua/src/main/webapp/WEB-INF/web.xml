@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Archetype Created Web Application</display-name>
+  
+  
+  <filter>
+		<filter-name>filter</filter-name>
+		<filter-class>br.com.tcc.projetorua.filter.AutorizaFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filter</filter-name>
+		<url-pattern>/controller</url-pattern>
+	</filter-mapping>
+  
+  <servlet>
+		<servlet-name>controller</servlet-name>
+		<servlet-class>br.com.tcc.projetorua.controller.ControllerServlet</servlet-class>
+		 <multipart-config>
+        <max-file-size>20848820</max-file-size> <!-- Tamanho máximo de arquivo 20 MB -->
+        <max-request-size>41697640</max-request-size> <!-- Tamanho máximo da solicitação 40 MB -->
+       </multipart-config>
+		
+		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controller</servlet-name>
+		<url-pattern>/controller</url-pattern>
+	</servlet-mapping>
+  
+  
+  <session-config>
+		<session-timeout>10</session-timeout></session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	
+</web-app>
